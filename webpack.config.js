@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
-const VueLoaderPlugin = require('vue-loader/lib/plugin');
+//const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 
@@ -12,15 +13,15 @@ const config = {
         poll: 1000 // every
     }, */
     entry: {
-        main: './index.js'
+        main: './src/index.js'
     },
     output: {
-        path: path.resolve(__dirname, 'dist'), // Standard
+        path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js',
     },
     module: {
         rules: [
-            {
+            /* {
                 test: /\.png$/,
                 use: [
                     {
@@ -30,40 +31,18 @@ const config = {
                         }
                     }
                 ]
-            },
-            {
+            }, */
+            /* {
                 test: /\.svg$/,
                 use: 'file-loader'
-            },
+            }, */
             // Running Babel on JS files. https://www.thebasement.be/working-with-babel-7-and-webpack/
-			/* {
+			{
 				test: /\.js$/,
 				exclude: /node_modules/,
-				use: {
-					loader: 'babel-loader',
-					options: {
-                        presets: [
-                            [
-                                "@babel/preset-env", {
-                                    "useBuiltIns": "usage",
-                                    "debug": true
-                                }
-                            ]
-                        ],
-                        plugins: [
-                            //'lodash',
-                            '@babel/plugin-transform-runtime'
-                        ]
-					}
-				}
-            }, */
-            {
-                test: /\.vue$/,
-                use: [
-                    'vue-loader'
-                ]
+				use: 'babel-loader',
             },
-            {
+            /* {
                 test: /\.css$/,
                 use: [
                     'style-loader',
@@ -76,7 +55,7 @@ const config = {
                     'postcss-loader',
                     'sass-loader'
                 ]
-            },
+            }, */
             {
                 test: /\.scss$/,
                 use: [
@@ -85,7 +64,7 @@ const config = {
                     'sass-loader'
                 ]
             },
-            {
+            /* {
                 test: /\.(scss)$/,
                 //exclude: /node_modules/,
                 use: [
@@ -96,9 +75,9 @@ const config = {
                             name: '[name].min.css'
                         }
                     },
-                    /* {
-                        loader: 'style-loader', // inject CSS to page
-                    }, */
+                    //{
+                    //    loader: 'style-loader', // inject CSS to page
+                    //},
                     {
 						loader: 'extract-loader'
 					},
@@ -121,12 +100,16 @@ const config = {
                     },
                     
                 ]
-            },
+            }, */
         ]
     },
     plugins: [
-        new VueLoaderPlugin(),
         new CleanWebpackPlugin(),
+        new HtmlWebpackPlugin({
+            cache: false,
+            template: './src/index.html',
+            filename: 'index.html',
+        }),
     ]
 };
 
