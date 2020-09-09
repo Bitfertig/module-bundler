@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Module Bundler</title>
 </head>
 <body>
     
@@ -13,7 +13,7 @@
     Output: <input type="text" id="output" value="dist/bundle.js">
 
     <ul id="">
-        <li><input type="checkbox"> SASS</li>
+        <li><input type="checkbox" id="sass"> SASS</li>
         <li><input type="checkbox" id="babel"> Babel</li>
         <li><input type="checkbox" id="vue" value="1" onchange="generate()"> Vue</li>
     </ul>
