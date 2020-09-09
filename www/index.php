@@ -14,7 +14,7 @@
 
     <ul id="">
         <li><input type="checkbox"> SASS</li>
-        <li><input type="checkbox"> Babel</li>
+        <li><input type="checkbox" id="babel"> Babel</li>
         <li><input type="checkbox" id="vue" value="1" onchange="generate()"> Vue</li>
     </ul>
 
