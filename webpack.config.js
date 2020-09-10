@@ -1,8 +1,8 @@
 const webpack = require('webpack');
 const path = require('path');
 //const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 
 const config = {
@@ -59,7 +59,7 @@ const config = {
             {
                 test: /\.scss$/,
                 use: [
-                    'vue-style-loader',
+                    'style-loader',
                     'css-loader',
                     'sass-loader'
                 ]

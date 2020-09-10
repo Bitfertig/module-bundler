@@ -7,40 +7,66 @@
 </head>
 <body>
     
-    <h1>Webpack Generator</h1>
 
-    <div>
-        Target: <select id="target" class="generate">
-            <option value="web">web</option>
-            <option value="node">node</option>
-        </select>
-    </div>
-    <div>
-        Entry: <input type="text" id="entry" class="generate" value="src/index.js">
-    </div>
-    <div>
-        Output path:
-        <input type="radio" name="output_path_type" id="output_path_type_function" class="generate" value="function" checked> <input type="text" id="output_path_function" class="generate" value="path.resolve(__dirname, 'dist')">
-        <input type="radio" name="output_path_type" id="output_path_type_string" class="generate" value="string"> <input type="text" id="output_path_string" class="generate" value="./dist">
-    </div>
-    <div>
-        Output filename: <input type="text" id="output_filename" class="generate" value="bundle.js">
+    <div class="grid-container">
+
+        <div class="in">
+            <h1>Webpack Generator</h1>
+
+            <div class="box">
+                Target: <select id="target" class="generate">
+                    <option value="web">web</option>
+                    <option value="node">node</option>
+                </select>
+            </div>
+
+            <div class="box">
+                Entry: <input type="text" id="entry" class="generate" value="src/index.js">
+            </div>
+
+            <div class="box">
+                Output path:
+                <input type="radio" name="output_path_type" id="output_path_type_function" class="generate" value="function" checked> <input type="text" id="output_path_function" class="generate" value="path.resolve(__dirname, 'dist')">
+                <input type="radio" name="output_path_type" id="output_path_type_string" class="generate" value="string"> <input type="text" id="output_path_string" class="generate" value="./dist">
+            </div>
+
+            <div class="box">
+                Output filename: <input type="text" id="output_filename" class="generate" value="bundle.js">
+            </div>
+
+            <div class="box">
+                Features
+                <ul id="">
+                    <li><input type="checkbox" id="clean" class="generate" value="1"> <label for="clean">Cleanup</label></li>
+                    <li><input type="checkbox" id="html" class="generate" value="1"> <label for="html">HTML</label></li>
+                    <li><input type="checkbox" id="css_extract" class="generate" value="1"> <label for="css_extract">CSS Extract</label></li>
+                    <li><input type="checkbox" id="css" class="generate" value="1"> <label for="css">CSS</label></li>
+                    <li><input type="checkbox" id="sass" class="generate" value="1"> <label for="sass">SASS</label></li>
+                    <li><input type="checkbox" id="less" class="generate" value="1"> <label for="less">Less</label></li>
+                    <li><input type="checkbox" id="babel" class="generate" value="1"> <label for="babel">Babel</label></li>
+                    <li><input type="checkbox" id="vue" class="generate" value="1"> <label for="vue">Vue</label></li>
+                </ul>
+            </div>
+
+
+            <div class="footer">
+                <a href="http://www.bitfertig.de/impressum">Impress</a>
+                &middot;
+                <a href="http://www.bitfertig.de/datenschutzerklaerung">Privacy</a>
+            </div>
+
+        </div>
+
+
+        <div class="out">
+
+            webpack.config.js
+            <pre><code class="language-js" id="files"></code></pre>
+
+        </div>
+
     </div>
 
-    <ul id="">
-        <li><input type="checkbox" id="clean" class="generate" value="1"> <label for="clean">Cleanup</label></li>
-        <li><input type="checkbox" id="html" class="generate" value="1"> <label for="html">HTML</label></li>
-        <li><input type="checkbox" id="css_extract" class="generate" value="1"> <label for="css_extract">CSS Extract</label></li>
-        <li><input type="checkbox" id="css" class="generate" value="1"> <label for="css">CSS</label></li>
-        <li><input type="checkbox" id="sass" class="generate" value="1"> <label for="sass">SASS</label></li>
-        <li><input type="checkbox" id="less" class="generate" value="1"> <label for="less">Less</label></li>
-        <li><input type="checkbox" id="babel" class="generate" value="1"> <label for="babel">Babel</label></li>
-        <li><input type="checkbox" id="vue" class="generate" value="1"> <label for="vue">Vue</label></li>
-    </ul>
-
-
-    webpack.config.js
-    <textarea id="files" rows="20" style="width:100%;"></textarea>
 
 
 

@@ -2,7 +2,14 @@ console.log('It`s working.');
 
 //require('./src/myfile.js'); // Require will also automatically scan node_modules to find modules
 
+import './main.scss';
 
+//import hljs from 'highlight.js'; // all languages
+import hljs from 'highlight.js/lib/core';
+import javascript from 'highlight.js/lib/languages/javascript';
+hljs.registerLanguage('javascript', javascript);
+import 'highlight.js/scss/vs2015.scss';
+//import 'highlight.js/scss/atom-one-dark.scss';
 
 function generate() {
 
@@ -185,7 +192,11 @@ module.exports = config;
 
 webpack_config = webpack_config.trim();
 
-    document.querySelector('#files').value = webpack_config;
+    document.querySelector('#files').innerText = webpack_config;
+
+    document.querySelectorAll('pre code').forEach((block) => {
+        hljs.highlightBlock(block);
+    });
 }
 
 
