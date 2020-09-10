@@ -26,6 +26,7 @@ function generate() {
     features.css_extract = document.querySelector('#css_extract').checked;
     features.css = document.querySelector('#css').checked;
     features.sass = document.querySelector('#sass').checked;
+    features.less = document.querySelector('#less').checked;
     features.babel = document.querySelector('#babel').checked;
     features.vue = document.querySelector('#vue').checked;
 
@@ -82,6 +83,19 @@ function generate() {
                     'style-loader',
                     'css-loader',
                     'sass-loader',
+                ]
+            },
+        `);
+    }
+
+    if ( features.less ) {
+        rules.push(`
+            {
+                test: /\.less$/,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    'less-loader'
                 ]
             },
         `);
