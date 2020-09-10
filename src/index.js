@@ -150,8 +150,8 @@ function generate() {
     
     devInstalls = devInstalls.filter((x, i, a) => a.indexOf(x) == i).join(' ');
     requires = requires.map(item => item.trim('')).join("\n");
-    rules = rules.map(item => item.trim('')).join("\n");
-    plugins = plugins.map(item => item.trim('')).join("\n");
+    rules = rules.map(item => '            '+item.trim('')).join("\n").trim('');
+    plugins = plugins.map(item => '        '+item.trim('')).join("\n").trim('');
 
 
     var webpack_config = `
