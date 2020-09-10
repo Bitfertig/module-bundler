@@ -11,6 +11,15 @@ hljs.registerLanguage('javascript', javascript);
 import 'highlight.js/scss/vs2015.scss';
 //import 'highlight.js/scss/atom-one-dark.scss';
 
+
+import Vue from 'vue'
+import App from './app.vue';
+window.vm = new Vue({
+    render: h => h(App),
+}).$mount('#app');
+
+
+
 function generate() {
 
     let target = document.querySelector('#target').value; // web, node, ...
@@ -135,6 +144,7 @@ function generate() {
 
     if ( features.vue ) {
         devInstalls.push('vue-loader', 'vue-template-compiler');
+        //installs.push('npm install vue'); // TODO:
         requires.push(`const VueLoaderPlugin = require('vue-loader/lib/plugin');`);
         rules.push(`
             {

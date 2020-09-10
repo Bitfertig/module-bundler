@@ -1,8 +1,8 @@
 const webpack = require('webpack');
 const path = require('path');
-//const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 
 const config = {
@@ -101,6 +101,19 @@ const config = {
                     
                 ]
             }, */
+            {
+                test: /.vue$/,
+                use: [
+                    'vue-loader'
+                ]
+            },
+            {
+                test: /\.css$/,
+                use: [
+                    'style-loader',
+                    'css-loader'
+                ]
+            },
         ]
     },
     plugins: [
@@ -110,6 +123,7 @@ const config = {
             template: './src/index.html',
             filename: 'index.html',
         }),
+        new VueLoaderPlugin(),
     ]
 };
 
