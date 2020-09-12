@@ -1,6 +1,24 @@
+:root {
+    // webpack Branding https://webpack.js.org/branding/
+    --wp-col-malibu: #8dd6f9;
+    --wp-col-denim: #1d78c1;
+    --wp-col-fiord: #465e69;
+    --wp-col-outerspace: #2b3a42;
+    --wp-col-emperor: #535353;
+    --wp-col-mineshaft: #333333;
+    --wp-col-alto: #dedede;
+    --wp-col-dustygray: #999999;
+    --wp-col-dovegray: #666666;
+    --wp-col-white: #ffffff;
+    --wp-col-concrete: #f2f2f2;
+}
+
+
 *, *::before, *::after {
     box-sizing: border-box;
 }
+
+
 
 
 html {
@@ -14,8 +32,24 @@ html, body {
 }
 body {
     color: #969696;
+    font-family: sans-serif;
 }
 
+
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-family: sans-serif;
+    color: var(--wp-col-denim);
+    -webkit-text-stroke: 2px var(--wp-col-malibu);
+    font-weight: bold;
+    letter-spacing: 0.25rem;
+    
+    .inner {
+        background-color: var(--wp-col-white);
+        padding: 5px 10px;
+    }
+}
 
 
 .grid-container {
@@ -24,14 +58,14 @@ body {
     grid-template-rows: 1fr;
     gap: 0px 0px;
     grid-template-areas:
-        "in out";
-
+    "in out";
+    
     height: 100%;
 }
 
 .in {
     grid-area: in;
-    background-color: #212121;
+    background-color: var(--wp-col-outerspace);
 }
 .out {
     grid-area: out;
@@ -39,17 +73,60 @@ body {
 }
 
 
-.in .box {
-    border-radius: 3px;
-    background-color: rgba(255,255,255, 0.1);
-    margin: 10px 15px;
-    padding: 5px 10px;
+.in {
+    .box {
+        border-radius: 3px;
+        background-color: var(--wp-col-malibu);
+        color: var(--wp-col-outerspace);
+        margin: 10px 15px;
+
+        h2 {
+            font-weight: normal;
+            font-size: 1.2rem;
+            background-color: var(--wp-col-denim);
+            color: var(--wp-col-concrete);
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+            margin: 0;
+            padding: 5px 10px;
+        }
+
+        .content {
+            padding: 5px 10px;
+        }
+    }
 }
 
 
-.out > pre {
-    margin: 0;
+.out {
+    padding: 10px 15px;
+
+    & > pre {
+        margin: 0;
+        
+    }
+
+    .hljs {
+        background-color: transparent !important;
+        font-weight: bold;
+        cursor: text;
+        /* font-family: Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace; */
+    }
 }
-.hljs {
-    background-color: transparent !important;
+
+
+
+.footer {
+    text-align: center;
+    font-size: 0.75rem;
+
+    a {
+        transition: all 0.1s ease-in;
+        color: rgba(255,255,255, 0.7);
+        text-decoration: none;
+
+        &:hover {
+            color: rgba(255,255,255, 1);
+        }
+    }
 }
