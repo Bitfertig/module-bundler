@@ -1,5 +1,5 @@
 {
-  "name": "webpack-generator",
+  "name": "webpack-configurator",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",

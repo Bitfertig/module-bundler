@@ -193,6 +193,7 @@ export default {
                 requires.push(`const HtmlWebpackPlugin = require('html-webpack-plugin');`);
                 plugins.push(`
                 new HtmlWebpackPlugin({
+                    cache: false,
                     template: './src/index.html',
                     filename: 'index.html',
                 }),
