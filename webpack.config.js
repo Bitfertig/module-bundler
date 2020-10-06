@@ -121,7 +121,7 @@ const config = {
         new HtmlWebpackPlugin({
             cache: false,
             template: './src/index.html',
-            filename: 'index.html',
+            filename: '../index.html',
         }),
         new VueLoaderPlugin(),
     ]
